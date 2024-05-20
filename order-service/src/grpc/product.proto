@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package product;
+
+service ProductService {
+  rpc UpdateProductQuantity (UpdateProductQuantityRequest) returns (UpdateProductQuantityResponse);
+}
+
+message UpdateProductQuantityRequest {
+  string product_id = 1;
+  int32 quantity = 2;
+}
+
+message UpdateProductQuantityResponse {
+  bool success = 1;
+  string message = 2;
+}
